@@ -24,6 +24,9 @@
 		C5A25D942417354200CF38C0 /* XibHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D932417354200CF38C0 /* XibHelper.swift */; };
 		C5A25D9624173C4B00CF38C0 /* DashboardTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D9524173C4B00CF38C0 /* DashboardTableViewCellView.swift */; };
 		C5A25D9824173EFC00CF38C0 /* DashboardTableViewCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A25D9724173EFC00CF38C0 /* DashboardTableViewCellView.xib */; };
+		C5A25D9A241744C300CF38C0 /* ItemModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D99241744C300CF38C0 /* ItemModalViewController.swift */; };
+		C5A25D9E2417485A00CF38C0 /* ItemModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D9D2417485A00CF38C0 /* ItemModalView.swift */; };
+		C5A25DA02417488700CF38C0 /* ItemModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A25D9F2417488700CF38C0 /* ItemModalView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,9 @@
 		C5A25D932417354200CF38C0 /* XibHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibHelper.swift; sourceTree = "<group>"; };
 		C5A25D9524173C4B00CF38C0 /* DashboardTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCellView.swift; sourceTree = "<group>"; };
 		C5A25D9724173EFC00CF38C0 /* DashboardTableViewCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTableViewCellView.xib; sourceTree = "<group>"; };
+		C5A25D99241744C300CF38C0 /* ItemModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModalViewController.swift; sourceTree = "<group>"; };
+		C5A25D9D2417485A00CF38C0 /* ItemModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModalView.swift; sourceTree = "<group>"; };
+		C5A25D9F2417488700CF38C0 /* ItemModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemModalView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 			children = (
 				C57ACAFE2417071700673665 /* ViewController.swift */,
 				C5A25D8C24171F3B00CF38C0 /* DashboardTableViewController.swift */,
+				C5A25D99241744C300CF38C0 /* ItemModalViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -154,11 +161,29 @@
 		C5A25D8E24172F0C00CF38C0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5A25D9C2417483000CF38C0 /* ItemModalView */,
+				C5A25D9B2417481700CF38C0 /* DashboardTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C5A25D9B2417481700CF38C0 /* DashboardTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				C5A25D9724173EFC00CF38C0 /* DashboardTableViewCellView.xib */,
 				C5A25D9524173C4B00CF38C0 /* DashboardTableViewCellView.swift */,
 				C5A25D8F2417302400CF38C0 /* DashboardTableViewCell.swift */,
 			);
-			path = Views;
+			path = DashboardTableViewCell;
+			sourceTree = "<group>";
+		};
+		C5A25D9C2417483000CF38C0 /* ItemModalView */ = {
+			isa = PBXGroup;
+			children = (
+				C5A25D9D2417485A00CF38C0 /* ItemModalView.swift */,
+				C5A25D9F2417488700CF38C0 /* ItemModalView.xib */,
+			);
+			path = ItemModalView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5A25DA02417488700CF38C0 /* ItemModalView.xib in Resources */,
 				C57ACB0A2417071900673665 /* LaunchScreen.storyboard in Resources */,
 				C5A25D9824173EFC00CF38C0 /* DashboardTableViewCellView.xib in Resources */,
 				C57ACB072417071900673665 /* Assets.xcassets in Resources */,
@@ -268,9 +294,11 @@
 				C5A25D912417302400CF38C0 /* DashboardTableViewCell.swift in Sources */,
 				C57ACB2624170BC700673665 /* CoreService.swift in Sources */,
 				C57ACB052417071700673665 /* Charge.xcdatamodeld in Sources */,
+				C5A25D9E2417485A00CF38C0 /* ItemModalView.swift in Sources */,
 				C5A25D942417354200CF38C0 /* XibHelper.swift in Sources */,
 				C5A25D9624173C4B00CF38C0 /* DashboardTableViewCellView.swift in Sources */,
 				C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */,
+				C5A25D9A241744C300CF38C0 /* ItemModalViewController.swift in Sources */,
 				C57ACAFD2417071700673665 /* SceneDelegate.swift in Sources */,
 				C5A25D8D24171F3B00CF38C0 /* DashboardTableViewController.swift in Sources */,
 			);

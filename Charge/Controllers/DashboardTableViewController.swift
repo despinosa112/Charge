@@ -29,7 +29,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @IBAction func add(_ sender: Any) {
-        
+        presentItemModalViewController()
     }
     
 
@@ -46,6 +46,15 @@ class DashboardTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+    
+    
+    func presentItemModalViewController(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let itemModalViewController: ItemModalViewController = storyboard.instantiateViewController(withIdentifier: "itemModalViewController") as! ItemModalViewController
+        
+        self.present(itemModalViewController, animated: true, completion: nil)
+    }
+    
 
 
 }
