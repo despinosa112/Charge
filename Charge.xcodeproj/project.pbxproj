@@ -10,6 +10,8 @@
 		C56009232417DE6300044AAC /* NotificationHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56009222417DE6300044AAC /* NotificationHelperTests.swift */; };
 		C56009252417DE9600044AAC /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56009242417DE9600044AAC /* NotificationHelper.swift */; };
 		C56009272417E4BF00044AAC /* Ext_UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56009262417E4BF00044AAC /* Ext_UIViewController.swift */; };
+		C560092A241804BF00044AAC /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5600929241804BF00044AAC /* ItemViewModel.swift */; };
+		C560092C2418053A00044AAC /* ItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560092B2418053A00044AAC /* ItemViewModelTests.swift */; };
 		C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACAFA2417071700673665 /* AppDelegate.swift */; };
 		C57ACAFD2417071700673665 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACAFC2417071700673665 /* SceneDelegate.swift */; };
 		C57ACAFF2417071700673665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACAFE2417071700673665 /* ViewController.swift */; };
@@ -46,6 +48,8 @@
 		C56009222417DE6300044AAC /* NotificationHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelperTests.swift; sourceTree = "<group>"; };
 		C56009242417DE9600044AAC /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		C56009262417E4BF00044AAC /* Ext_UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIViewController.swift; sourceTree = "<group>"; };
+		C5600929241804BF00044AAC /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		C560092B2418053A00044AAC /* ItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModelTests.swift; sourceTree = "<group>"; };
 		C57ACAF72417071700673665 /* Charge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57ACAFA2417071700673665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C57ACAFC2417071700673665 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +94,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C56009282418044200044AAC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C5600929241804BF00044AAC /* ItemViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C560092D24181B0A00044AAC /* Shared Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C56009242417DE9600044AAC /* NotificationHelper.swift */,
+			);
+			path = "Shared Helpers";
+			sourceTree = "<group>";
+		};
 		C57ACAEE2417071700673665 = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +134,8 @@
 				C57ACAFA2417071700673665 /* AppDelegate.swift */,
 				C57ACAFC2417071700673665 /* SceneDelegate.swift */,
 				C5A25D932417354200CF38C0 /* XibHelper.swift */,
+				C560092D24181B0A00044AAC /* Shared Helpers */,
+				C56009282418044200044AAC /* ViewModels */,
 				C5A25D8E24172F0C00CF38C0 /* Views */,
 				C5A25D8924171B7D00CF38C0 /* Controllers */,
 				C57ACB2424170B7A00673665 /* Services */,
@@ -134,6 +156,7 @@
 				C57ACB202417095200673665 /* ItemTests.swift */,
 				C57ACB2724170C0100673665 /* CoreServiceTests.swift */,
 				C56009222417DE6300044AAC /* NotificationHelperTests.swift */,
+				C560092B2418053A00044AAC /* ItemViewModelTests.swift */,
 				C57ACB162417071900673665 /* Info.plist */,
 			);
 			path = ChargeTests;
@@ -151,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				C57ACB2524170BC700673665 /* CoreService.swift */,
-				C56009242417DE9600044AAC /* NotificationHelper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -306,6 +328,7 @@
 				C57ACB052417071700673665 /* Charge.xcdatamodeld in Sources */,
 				C5A25D9E2417485A00CF38C0 /* ItemModalView.swift in Sources */,
 				C56009252417DE9600044AAC /* NotificationHelper.swift in Sources */,
+				C560092A241804BF00044AAC /* ItemViewModel.swift in Sources */,
 				C5A25D942417354200CF38C0 /* XibHelper.swift in Sources */,
 				C5A25D9624173C4B00CF38C0 /* DashboardTableViewCellView.swift in Sources */,
 				C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */,
@@ -321,6 +344,7 @@
 			files = (
 				C57ACB212417095200673665 /* ItemTests.swift in Sources */,
 				C57ACB152417071900673665 /* ChargeTests.swift in Sources */,
+				C560092C2418053A00044AAC /* ItemViewModelTests.swift in Sources */,
 				C56009232417DE6300044AAC /* NotificationHelperTests.swift in Sources */,
 				C57ACB2824170C0100673665 /* CoreServiceTests.swift in Sources */,
 			);

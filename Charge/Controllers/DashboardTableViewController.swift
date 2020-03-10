@@ -31,7 +31,7 @@ class DashboardTableViewController: UITableViewController {
     }
     
     @IBAction func add(_ sender: Any) {
-        presentItemModalViewController()
+        presentItemModalViewController(item: nil)
     }
     
 
@@ -50,10 +50,10 @@ class DashboardTableViewController: UITableViewController {
     }
     
     
-    func presentItemModalViewController(){
+    func presentItemModalViewController(item: Item?){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let itemModalViewController: ItemModalViewController = storyboard.instantiateViewController(withIdentifier: "itemModalViewController") as! ItemModalViewController
-        
+        itemModalViewController.item = item
         self.present(itemModalViewController, animated: true, completion: nil)
     }
     
@@ -93,18 +93,28 @@ extension DashboardTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! DashboardTableViewCell
-        
+        let itemViewModel = ItemViewModel(item: self.items[indexPath.item] as! Item)
+        cell.dashboardTableViewCellView?.dateLabel.text = ""
+        cell.dashboardTableViewCellView?.itemDescriptionTextView.text = itemViewModel.description
+        cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
+        cell.dashboardTableViewCellView?.locationLabel.text = ""
         return cell
     }
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            //tableView.deleteRows(at: [indexPath], with: .fade)
+            CoreService.delete(xCObject: self.items[indexPath.item])
+            self.refresh()
         }
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 130
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = items[indexPath.item] as? Item else { return }
+        self.presentItemModalViewController(item: item)
     }
 
     /*

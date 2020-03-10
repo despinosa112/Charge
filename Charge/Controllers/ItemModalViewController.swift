@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ItemModalViewController: ViewController {
     
@@ -20,6 +21,7 @@ class ItemModalViewController: ViewController {
         layoutModal()
         self.modalOverlay.isHidden = false
         self.view.backgroundColor = .clear
+        setData()
     }
 
     
@@ -42,13 +44,46 @@ class ItemModalViewController: ViewController {
         itemModalView.itemDescriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
         itemModalView.itemDescriptionTextView.layer.cornerRadius = 4
         itemModalView.itemDescriptionTextView.layer.masksToBounds = true
+        
+        if self.item != nil {
+            self.itemModalView?.saveButton.setTitle("Update", for: .normal)
+        }
+    }
+    
+    func setData(){
+        if item == nil {
+            self.itemModalView?.itemNumberTextField.text = "0"
+        } else {
+            let itemViewModel = ItemViewModel(item: self.item!)
+            self.itemModalView?.itemNumberTextField.text = itemViewModel.itemNum
+            self.itemModalView?.itemDescriptionTextView.text = itemViewModel.description
+        }
     }
     
     
     func createAndSaveNewItem(){
-        guard let newItem = CoreService.create(xCObjectType: .item, data: nil) else { return }
+        var data = [String : Any]()
+        if let itemNum = Int(self.itemModalView!.itemNumberTextField.text!) {
+            let keyString = Item.Keys.itemNumber.rawValue
+            data[keyString] = itemNum as Any
+        }
+        if let itemDescription = self.itemModalView?.itemDescriptionTextView.text {
+            let keyString = Item.Keys.itemDescription.rawValue
+            data[keyString] = itemDescription as Any
+        }
+        guard let newItem = CoreService.create(xCObjectType: .item, data: data) else { return }
         CoreService.save(newItem)
         NotificationHelper.post(notification: .saveNewItem, data: nil)
+    }
+    
+    func updateCurrentItem(){
+        self.item?.itemDescription = self.itemModalView?.itemDescriptionTextView.text
+        if let itemNum = Int64(self.itemModalView?.itemNumberTextField.text ?? "error") {
+            self.item?.itemNumber = itemNum
+        }
+        guard let managedObject = self.item else { return }
+        CoreService.save(managedObject)
+        NotificationHelper.post(notification: .updateItem, data: nil)
     }
 
 }
@@ -60,7 +95,13 @@ extension ItemModalViewController: ItemModalViewDelegate {
     }
     
     func didSaveUpdate(itemModalView: ItemModalView) {
-        createAndSaveNewItem()
+        if self.item != nil {
+            //Update Item
+            updateCurrentItem()
+        } else {
+            //Create New Item
+            createAndSaveNewItem()
+        }
         self.dismiss(animated: true, completion: nil)
 
     }
