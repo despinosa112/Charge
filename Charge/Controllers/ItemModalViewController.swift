@@ -48,6 +48,7 @@ class ItemModalViewController: ViewController {
     func createAndSaveNewItem(){
         guard let newItem = CoreService.create(xCObjectType: .item, data: nil) else { return }
         CoreService.save(newItem)
+        NotificationHelper.post(notification: .saveNewItem, data: nil)
     }
 
 }

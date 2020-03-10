@@ -21,6 +21,8 @@ class DashboardTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         self.tableView.register(DashboardTableViewCell.self, forCellReuseIdentifier: "cellId")
+        addObserver(.saveNewItem)
+        addObserver(.updateItem)
 
     }
     
@@ -55,6 +57,21 @@ class DashboardTableViewController: UITableViewController {
         self.present(itemModalViewController, animated: true, completion: nil)
     }
     
+    override func didObserveNotification(notification: NSNotification) {
+        let notification = NotificationHelper.Notification.init(rawValue: notification.name.rawValue)
+        switch notification {
+        case .saveNewItem:
+            refresh()
+        case .updateItem:
+            refresh()
+        case .none:
+            print("none")
+        }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
 
 }

@@ -34,9 +34,11 @@ class ItemModalView: UIView {
     @IBAction func saveUpdate(_ sender: Any) {
         self.delegate?.didSaveUpdate(itemModalView: self)
     }
+    
     @IBAction func close(_ sender: Any) {
         self.delegate?.didClose(itemModalView: self)
     }
+    
     @IBAction func useCurrentLocation(_ sender: Any) {
         
     }
