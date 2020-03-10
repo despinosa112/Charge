@@ -20,7 +20,6 @@ class DashboardTableViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
         self.tableView.register(DashboardTableViewCell.self, forCellReuseIdentifier: "cellId")
 
     }
@@ -69,6 +68,7 @@ extension DashboardTableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! DashboardTableViewCell
+        
         return cell
     }
 
@@ -76,6 +76,10 @@ extension DashboardTableViewController {
         if editingStyle == .delete {
             //tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 130
     }
 
     /*
