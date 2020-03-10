@@ -19,6 +19,9 @@
 		C57ACB2324170A8F00673665 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB2224170A8F00673665 /* Item.swift */; };
 		C57ACB2624170BC700673665 /* CoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB2524170BC700673665 /* CoreService.swift */; };
 		C57ACB2824170C0100673665 /* CoreServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB2724170C0100673665 /* CoreServiceTests.swift */; };
+		C5A25D8D24171F3B00CF38C0 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D8C24171F3B00CF38C0 /* DashboardTableViewController.swift */; };
+		C5A25D912417302400CF38C0 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D8F2417302400CF38C0 /* DashboardTableViewCell.swift */; };
+		C5A25D922417302400CF38C0 /* DashboardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A25D902417302400CF38C0 /* DashboardTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		C57ACB2224170A8F00673665 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C57ACB2524170BC700673665 /* CoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreService.swift; sourceTree = "<group>"; };
 		C57ACB2724170C0100673665 /* CoreServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreServiceTests.swift; sourceTree = "<group>"; };
+		C5A25D8C24171F3B00CF38C0 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
+		C5A25D8F2417302400CF38C0 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
+		C5A25D902417302400CF38C0 /* DashboardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +97,8 @@
 			children = (
 				C57ACAFA2417071700673665 /* AppDelegate.swift */,
 				C57ACAFC2417071700673665 /* SceneDelegate.swift */,
-				C57ACAFE2417071700673665 /* ViewController.swift */,
+				C5A25D8E24172F0C00CF38C0 /* Views */,
+				C5A25D8924171B7D00CF38C0 /* Controllers */,
 				C57ACB2424170B7A00673665 /* Services */,
 				C57ACB1F241707F400673665 /* Models */,
 				C57ACB002417071700673665 /* Main.storyboard */,
@@ -128,6 +135,24 @@
 				C57ACB2524170BC700673665 /* CoreService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		C5A25D8924171B7D00CF38C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C57ACAFE2417071700673665 /* ViewController.swift */,
+				C5A25D8C24171F3B00CF38C0 /* DashboardTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C5A25D8E24172F0C00CF38C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5A25D8F2417302400CF38C0 /* DashboardTableViewCell.swift */,
+				C5A25D902417302400CF38C0 /* DashboardTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +238,7 @@
 			files = (
 				C57ACB0A2417071900673665 /* LaunchScreen.storyboard in Resources */,
 				C57ACB072417071900673665 /* Assets.xcassets in Resources */,
+				C5A25D922417302400CF38C0 /* DashboardTableViewCell.xib in Resources */,
 				C57ACB022417071700673665 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,10 +259,12 @@
 			files = (
 				C57ACB2324170A8F00673665 /* Item.swift in Sources */,
 				C57ACAFF2417071700673665 /* ViewController.swift in Sources */,
+				C5A25D912417302400CF38C0 /* DashboardTableViewCell.swift in Sources */,
 				C57ACB2624170BC700673665 /* CoreService.swift in Sources */,
 				C57ACB052417071700673665 /* Charge.xcdatamodeld in Sources */,
 				C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */,
 				C57ACAFD2417071700673665 /* SceneDelegate.swift in Sources */,
+				C5A25D8D24171F3B00CF38C0 /* DashboardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
