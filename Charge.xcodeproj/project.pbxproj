@@ -15,6 +15,10 @@
 		C57ACB072417071900673665 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C57ACB062417071900673665 /* Assets.xcassets */; };
 		C57ACB0A2417071900673665 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C57ACB082417071900673665 /* LaunchScreen.storyboard */; };
 		C57ACB152417071900673665 /* ChargeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB142417071900673665 /* ChargeTests.swift */; };
+		C57ACB212417095200673665 /* ItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB202417095200673665 /* ItemTests.swift */; };
+		C57ACB2324170A8F00673665 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB2224170A8F00673665 /* Item.swift */; };
+		C57ACB2624170BC700673665 /* CoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB2524170BC700673665 /* CoreService.swift */; };
+		C57ACB2824170C0100673665 /* CoreServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACB2724170C0100673665 /* CoreServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		C57ACB102417071900673665 /* ChargeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChargeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57ACB142417071900673665 /* ChargeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeTests.swift; sourceTree = "<group>"; };
 		C57ACB162417071900673665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C57ACB202417095200673665 /* ItemTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTests.swift; sourceTree = "<group>"; };
+		C57ACB2224170A8F00673665 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C57ACB2524170BC700673665 /* CoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreService.swift; sourceTree = "<group>"; };
+		C57ACB2724170C0100673665 /* CoreServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +92,8 @@
 				C57ACAFA2417071700673665 /* AppDelegate.swift */,
 				C57ACAFC2417071700673665 /* SceneDelegate.swift */,
 				C57ACAFE2417071700673665 /* ViewController.swift */,
+				C57ACB2424170B7A00673665 /* Services */,
+				C57ACB1F241707F400673665 /* Models */,
 				C57ACB002417071700673665 /* Main.storyboard */,
 				C57ACB062417071900673665 /* Assets.xcassets */,
 				C57ACB082417071900673665 /* LaunchScreen.storyboard */,
@@ -97,9 +107,27 @@
 			isa = PBXGroup;
 			children = (
 				C57ACB142417071900673665 /* ChargeTests.swift */,
+				C57ACB202417095200673665 /* ItemTests.swift */,
+				C57ACB2724170C0100673665 /* CoreServiceTests.swift */,
 				C57ACB162417071900673665 /* Info.plist */,
 			);
 			path = ChargeTests;
+			sourceTree = "<group>";
+		};
+		C57ACB1F241707F400673665 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C57ACB2224170A8F00673665 /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C57ACB2424170B7A00673665 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C57ACB2524170BC700673665 /* CoreService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,7 +231,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C57ACB2324170A8F00673665 /* Item.swift in Sources */,
 				C57ACAFF2417071700673665 /* ViewController.swift in Sources */,
+				C57ACB2624170BC700673665 /* CoreService.swift in Sources */,
 				C57ACB052417071700673665 /* Charge.xcdatamodeld in Sources */,
 				C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */,
 				C57ACAFD2417071700673665 /* SceneDelegate.swift in Sources */,
@@ -214,7 +244,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C57ACB212417095200673665 /* ItemTests.swift in Sources */,
 				C57ACB152417071900673665 /* ChargeTests.swift in Sources */,
+				C57ACB2824170C0100673665 /* CoreServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
