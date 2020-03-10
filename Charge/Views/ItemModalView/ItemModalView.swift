@@ -28,6 +28,7 @@ class ItemModalView: UIView {
     @IBOutlet weak var itemDescriptionTextView: UITextView!
     
     
+    
     var delegate: ItemModalViewDelegate?
     
     @IBAction func saveUpdate(_ sender: Any) {
@@ -39,4 +40,6 @@ class ItemModalView: UIView {
     @IBAction func useCurrentLocation(_ sender: Any) {
         
     }
+    
+    
 }

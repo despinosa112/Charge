@@ -49,7 +49,7 @@
         <!--Item Modal View Controller-->
         <scene sceneID="IA4-Pq-U8X">
             <objects>
-                <viewController storyboardIdentifier="itemModalViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="currentContext" id="eQK-SN-7Gz" customClass="ItemModalViewController" customModule="Charge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="itemModalViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="eQK-SN-7Gz" customClass="ItemModalViewController" customModule="Charge" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HVb-IY-d26">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
