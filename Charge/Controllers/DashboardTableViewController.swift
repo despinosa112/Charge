@@ -15,6 +15,9 @@ class DashboardTableViewController: UITableViewController {
     
     var items = [NSManagedObject]()
     
+    var filteredItems = [NSManagedObject]()
+    var resultSearchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +27,7 @@ class DashboardTableViewController: UITableViewController {
         addObserver(.saveNewItem)
         addObserver(.updateItem)
         LocationHelper.shared.requestAuthorization()
+        self.setupSearchBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,13 +91,22 @@ extension DashboardTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return items.count
+        if resultSearchController.isActive {
+            return filteredItems.count
+        } else {
+            return items.count
+        }
     }
+    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! DashboardTableViewCell
-        let itemViewModel = ItemViewModel(item: self.items[indexPath.item] as! Item)
+        var itemViewModel: ItemViewModel!
+        if (resultSearchController.isActive) {
+            itemViewModel = ItemViewModel(item: self.filteredItems[indexPath.item] as! Item)
+        } else {
+            itemViewModel = ItemViewModel(item: self.items[indexPath.item] as! Item)
+        }
         cell.dashboardTableViewCellView?.dateLabel.text = itemViewModel.dateString
         cell.dashboardTableViewCellView?.itemDescriptionTextView.text = itemViewModel.description
         cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
@@ -118,4 +131,31 @@ extension DashboardTableViewController {
         self.presentItemModalViewController(item: item)
     }
 
+}
+
+extension DashboardTableViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredItems.removeAll(keepingCapacity: false)
+        let items = self.items as! [Item]
+        self.filteredItems = items.filter { (item) -> Bool in
+            let searchText = searchController.searchBar.text!.lowercased()
+            let description = item.itemDescription!.lowercased()
+            return description.contains(searchText)
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    func setupSearchBar(){
+        resultSearchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.searchBar.sizeToFit()
+            tableView.tableHeaderView = controller.searchBar
+            return controller
+        })()
+    }
+    
+    
 }
