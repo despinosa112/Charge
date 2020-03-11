@@ -11,6 +11,7 @@ import UIKit
 protocol ItemModalViewDelegate {
     func didClose(itemModalView: ItemModalView)
     func didSaveUpdate(itemModalView: ItemModalView)
+    func didSelectCurrentLocation(itemModalView: ItemModalView)
 }
 
 class ItemModalView: UIView {
@@ -40,7 +41,7 @@ class ItemModalView: UIView {
     }
     
     @IBAction func useCurrentLocation(_ sender: Any) {
-        
+        self.delegate?.didSelectCurrentLocation(itemModalView: self)
     }
     
     

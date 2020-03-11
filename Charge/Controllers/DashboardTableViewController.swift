@@ -23,7 +23,7 @@ class DashboardTableViewController: UITableViewController {
         self.tableView.register(DashboardTableViewCell.self, forCellReuseIdentifier: "cellId")
         addObserver(.saveNewItem)
         addObserver(.updateItem)
-
+        LocationHelper.shared.requestAuthorization()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -97,7 +97,7 @@ extension DashboardTableViewController {
         cell.dashboardTableViewCellView?.dateLabel.text = itemViewModel.dateString
         cell.dashboardTableViewCellView?.itemDescriptionTextView.text = itemViewModel.description
         cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
-        cell.dashboardTableViewCellView?.locationLabel.text = ""
+        cell.dashboardTableViewCellView?.locationLabel.text = itemViewModel.locationString
         return cell
     }
 

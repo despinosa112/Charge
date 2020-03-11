@@ -59,6 +59,7 @@ class ItemModalViewController: ViewController {
             self.itemModalView?.itemNumberTextField.text = itemViewModel.itemNum
             self.itemModalView?.itemDescriptionTextView.text = itemViewModel.description
             self.itemModalView?.dateTextField.text = itemViewModel.dateString
+            self.itemModalView?.locationTextField.text = itemViewModel.locationString
         }
     }
     
@@ -68,6 +69,8 @@ class ItemModalViewController: ViewController {
         if let itemNum = Int(self.itemModalView!.itemNumberTextField.text!) {
             let keyString = Item.Keys.itemNumber.rawValue
             data[keyString] = itemNum as Any
+        } else {
+            presentOKAlertWith(title: "Invalid Number", message: "Please use and integer for item number")
         }
         if let itemDescription = self.itemModalView?.itemDescriptionTextView.text {
             let keyString = Item.Keys.itemDescription.rawValue
@@ -79,6 +82,13 @@ class ItemModalViewController: ViewController {
         } else {
             presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
         }
+        if let location = LocationHelper.locationFrom(self.itemModalView?.locationTextField.text ?? "") {
+            let locationString = LocationHelper.locationStringFrom(coordinate: location)
+            let keyString = Item.Keys.location.rawValue
+            data[keyString] = locationString as Any
+        } else {
+            presentOKAlertWith(title: "Invalid Location", message: "Please use latitude, longitude format")
+        }
         guard let newItem = CoreService.create(xCObjectType: .item, data: data) else { return }
         CoreService.save(newItem)
         NotificationHelper.post(notification: .saveNewItem, data: nil)
@@ -88,11 +98,19 @@ class ItemModalViewController: ViewController {
         self.item?.itemDescription = self.itemModalView?.itemDescriptionTextView.text
         if let itemNum = Int64(self.itemModalView?.itemNumberTextField.text ?? "error") {
             self.item?.itemNumber = itemNum
+        } else {
+            presentOKAlertWith(title: "Invalid Number", message: "Please use and integer for item number")
         }
         if let date = DateHelper.dateFrom(dateString: self.itemModalView?.dateTextField.text ?? "") {
             self.item?.date = date
         } else {
             presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
+        }
+        if let location = LocationHelper.locationFrom(self.itemModalView?.locationTextField.text ?? "") {
+            let locationString = LocationHelper.locationStringFrom(coordinate: location)
+            item?.location = locationString as NSObject
+        } else {
+            presentOKAlertWith(title: "Invalid Location", message: "Please use latitude, longitude format")
         }
 
         guard let managedObject = self.item else { return }
@@ -103,6 +121,13 @@ class ItemModalViewController: ViewController {
 }
 
 extension ItemModalViewController: ItemModalViewDelegate {
+    
+    
+    func didSelectCurrentLocation(itemModalView: ItemModalView) {
+        let currentLocation = LocationHelper.shared.currentLocationString()
+        self.itemModalView?.locationTextField.text = currentLocation
+    }
+    
     
     func didClose(itemModalView: ItemModalView) {
         self.dismiss(animated: true, completion: nil)

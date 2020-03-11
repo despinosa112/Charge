@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import CoreLocation
 
 class ItemViewModel {
     
@@ -33,6 +34,13 @@ class ItemViewModel {
         get {
             guard let date = self.item.date else { return "" }
             return DateHelper.dateStringFrom(date: date)
+        }
+    }
+    
+    var locationString: String {
+        get {
+            guard let coordString = self.item.location as? String else { return ""}
+            return coordString
         }
     }
     
