@@ -38,7 +38,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-og-5K5">
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o6J-og-5K5">
                     <rect key="frame" x="5" y="360" width="534" height="35"/>
                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -119,6 +119,17 @@
                         <constraint firstAttribute="height" constant="1" id="pTm-Vw-dan"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQa-gX-aef">
+                    <rect key="frame" x="439" y="5" width="100" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="0K7-8I-hCZ"/>
+                        <constraint firstAttribute="width" constant="100" id="5oi-ds-3AA"/>
+                    </constraints>
+                    <state key="normal" title="Show Barcode"/>
+                    <connections>
+                        <action selector="showBarcode:" destination="iN0-l3-epB" eventType="touchUpInside" id="cqA-y8-2Sy"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -132,11 +143,13 @@
                 <constraint firstItem="o6J-og-5K5" firstAttribute="top" secondItem="Jfq-QX-Wb6" secondAttribute="bottom" constant="5" id="BGV-jo-fFA"/>
                 <constraint firstItem="Q68-Oc-yga" firstAttribute="leading" secondItem="fkn-IG-FPs" secondAttribute="trailing" constant="5" id="HZD-9T-FnB"/>
                 <constraint firstItem="3EK-aM-Hdf" firstAttribute="top" secondItem="b71-LB-q5b" secondAttribute="bottom" constant="5" id="KkI-J5-DF5"/>
+                <constraint firstAttribute="trailing" secondItem="UQa-gX-aef" secondAttribute="trailing" constant="5" id="M3W-sz-N6x"/>
                 <constraint firstAttribute="bottom" secondItem="o6J-og-5K5" secondAttribute="bottom" constant="5" id="MzY-qD-jS8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3EK-aM-Hdf" secondAttribute="trailing" constant="5" id="NiU-uY-wXt"/>
                 <constraint firstItem="Swk-6O-O9G" firstAttribute="top" secondItem="3EK-aM-Hdf" secondAttribute="bottom" constant="5" id="RMa-PP-o0A"/>
                 <constraint firstItem="wFP-gG-iAM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="S6N-dT-yZw"/>
                 <constraint firstItem="3EK-aM-Hdf" firstAttribute="leading" secondItem="dXT-Zd-y2i" secondAttribute="trailing" constant="5" id="Usa-M7-P6Z"/>
+                <constraint firstItem="UQa-gX-aef" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="YIw-En-EHP"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6m9-TG-Ubq" secondAttribute="trailing" constant="5" id="Ydd-y6-ryI"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="b71-LB-q5b" secondAttribute="trailing" constant="5" id="YqR-sA-2OA"/>
                 <constraint firstItem="b71-LB-q5b" firstAttribute="leading" secondItem="bv1-Dh-jsQ" secondAttribute="trailing" constant="8" id="aFr-e4-jQg"/>
@@ -164,6 +177,7 @@
                 <outlet property="itemDescriptionTextView" destination="Jfq-QX-Wb6" id="0sF-3w-7R5"/>
                 <outlet property="itemNumberLabel" destination="Q68-Oc-yga" id="nYT-xP-VmN"/>
                 <outlet property="locationLabel" destination="3EK-aM-Hdf" id="Wed-nb-ocn"/>
+                <outlet property="showBarcodeButton" destination="UQa-gX-aef" id="WLC-00-g8P"/>
             </connections>
             <point key="canvasLocation" x="69.565217391304358" y="-78.348214285714278"/>
         </view>

@@ -43,6 +43,7 @@
 		C5CCB86C2418A520000AC916 /* XibHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86B2418A520000AC916 /* XibHelperTests.swift */; };
 		C5CCB86E2418A71D000AC916 /* ItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86D2418A71D000AC916 /* ItemValidator.swift */; };
 		C5CCB8702418ADBE000AC916 /* ItemValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86F2418ADBE000AC916 /* ItemValidatorTests.swift */; };
+		C5CCB8722418C410000AC916 /* BarcodeDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB8712418C410000AC916 /* BarcodeDisplayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		C5CCB86B2418A520000AC916 /* XibHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibHelperTests.swift; sourceTree = "<group>"; };
 		C5CCB86D2418A71D000AC916 /* ItemValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemValidator.swift; sourceTree = "<group>"; };
 		C5CCB86F2418ADBE000AC916 /* ItemValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemValidatorTests.swift; sourceTree = "<group>"; };
+		C5CCB8712418C410000AC916 /* BarcodeDisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeDisplayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				C57ACAFE2417071700673665 /* ViewController.swift */,
 				C5A25D8C24171F3B00CF38C0 /* DashboardTableViewController.swift */,
 				C5A25D99241744C300CF38C0 /* ItemModalViewController.swift */,
+				C5CCB8712418C410000AC916 /* BarcodeDisplayViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 			files = (
 				C57ACB2324170A8F00673665 /* Item.swift in Sources */,
 				C5CCB86E2418A71D000AC916 /* ItemValidator.swift in Sources */,
+				C5CCB8722418C410000AC916 /* BarcodeDisplayViewController.swift in Sources */,
 				C57ACAFF2417071700673665 /* ViewController.swift in Sources */,
 				C56009272417E4BF00044AAC /* Ext_UIViewController.swift in Sources */,
 				C5A25D912417302400CF38C0 /* DashboardTableViewCell.swift in Sources */,

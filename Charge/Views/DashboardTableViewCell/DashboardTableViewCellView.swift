@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DashboardTableViewCellViewDelegate {
+    func didSelectPressShowBarcode(dashboardTableViewCellView: DashboardTableViewCellView, indexPath: IndexPath)
+}
+
 class DashboardTableViewCellView: UIView {
 
     @IBOutlet weak var itemNumberLabel: UILabel!
@@ -15,5 +19,13 @@ class DashboardTableViewCellView: UIView {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var itemDescriptionTextView: UITextView!
     @IBOutlet weak var barcodeImage: UIImageView!
-    
+
+    var indexPath: IndexPath!
+    var delegate: DashboardTableViewCellViewDelegate?
+
+    @IBOutlet weak var showBarcodeButton: UIButton!
+
+    @IBAction func showBarcode(_ sender: Any) {
+        self.delegate?.didSelectPressShowBarcode(dashboardTableViewCellView: self, indexPath: indexPath)
+    }
 }

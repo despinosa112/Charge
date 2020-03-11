@@ -117,6 +117,8 @@ extension DashboardTableViewController {
         cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
         cell.dashboardTableViewCellView?.locationLabel.text = itemViewModel.locationString
         cell.dashboardTableViewCellView?.barcodeImage.image = itemViewModel.barcode
+        cell.dashboardTableViewCellView?.indexPath = indexPath
+        cell.dashboardTableViewCellView?.delegate = self
         return cell
     }
 
@@ -176,6 +178,14 @@ extension DashboardTableViewController: UISearchResultsUpdating {
             return controller
         })()
     }
+}
+
+extension DashboardTableViewController: DashboardTableViewCellViewDelegate {
     
-    
+    func didSelectPressShowBarcode(dashboardTableViewCellView: DashboardTableViewCellView, indexPath: IndexPath) {
+        let barcodeDisplayViewController = BarcodeDisplayViewController()
+        barcodeDisplayViewController.set(item: self.items[indexPath.item] as! Item)
+        self.navigationController?.pushViewController(barcodeDisplayViewController, animated: true)
+    }
+
 }
