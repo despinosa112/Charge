@@ -94,7 +94,7 @@ extension DashboardTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! DashboardTableViewCell
         let itemViewModel = ItemViewModel(item: self.items[indexPath.item] as! Item)
-        cell.dashboardTableViewCellView?.dateLabel.text = ""
+        cell.dashboardTableViewCellView?.dateLabel.text = itemViewModel.dateString
         cell.dashboardTableViewCellView?.itemDescriptionTextView.text = itemViewModel.description
         cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
         cell.dashboardTableViewCellView?.locationLabel.text = ""

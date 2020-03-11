@@ -53,10 +53,12 @@ class ItemModalViewController: ViewController {
     func setData(){
         if item == nil {
             self.itemModalView?.itemNumberTextField.text = "0"
+            self.itemModalView?.dateTextField.text = DateHelper.today()
         } else {
             let itemViewModel = ItemViewModel(item: self.item!)
             self.itemModalView?.itemNumberTextField.text = itemViewModel.itemNum
             self.itemModalView?.itemDescriptionTextView.text = itemViewModel.description
+            self.itemModalView?.dateTextField.text = itemViewModel.dateString
         }
     }
     
@@ -71,6 +73,12 @@ class ItemModalViewController: ViewController {
             let keyString = Item.Keys.itemDescription.rawValue
             data[keyString] = itemDescription as Any
         }
+        if let date = DateHelper.dateFrom(dateString: self.itemModalView?.dateTextField.text ?? "") {
+            let keyString = Item.Keys.date.rawValue
+             data[keyString] = date as Any
+        } else {
+            presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
+        }
         guard let newItem = CoreService.create(xCObjectType: .item, data: data) else { return }
         CoreService.save(newItem)
         NotificationHelper.post(notification: .saveNewItem, data: nil)
@@ -81,6 +89,12 @@ class ItemModalViewController: ViewController {
         if let itemNum = Int64(self.itemModalView?.itemNumberTextField.text ?? "error") {
             self.item?.itemNumber = itemNum
         }
+        if let date = DateHelper.dateFrom(dateString: self.itemModalView?.dateTextField.text ?? "") {
+            self.item?.date = date
+        } else {
+            presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
+        }
+
         guard let managedObject = self.item else { return }
         CoreService.save(managedObject)
         NotificationHelper.post(notification: .updateItem, data: nil)

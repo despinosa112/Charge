@@ -32,6 +32,8 @@
 		C5A25D9A241744C300CF38C0 /* ItemModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D99241744C300CF38C0 /* ItemModalViewController.swift */; };
 		C5A25D9E2417485A00CF38C0 /* ItemModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A25D9D2417485A00CF38C0 /* ItemModalView.swift */; };
 		C5A25DA02417488700CF38C0 /* ItemModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5A25D9F2417488700CF38C0 /* ItemModalView.xib */; };
+		C5CCB85C2418302D000AC916 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB85B2418302D000AC916 /* DateHelper.swift */; };
+		C5CCB85E24185290000AC916 /* DateHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB85D24185290000AC916 /* DateHelperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		C5A25D99241744C300CF38C0 /* ItemModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModalViewController.swift; sourceTree = "<group>"; };
 		C5A25D9D2417485A00CF38C0 /* ItemModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModalView.swift; sourceTree = "<group>"; };
 		C5A25D9F2417488700CF38C0 /* ItemModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemModalView.xib; sourceTree = "<group>"; };
+		C5CCB85B2418302D000AC916 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		C5CCB85D24185290000AC916 /* DateHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C56009242417DE9600044AAC /* NotificationHelper.swift */,
+				C5CCB85B2418302D000AC916 /* DateHelper.swift */,
 			);
 			path = "Shared Helpers";
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				C57ACB2724170C0100673665 /* CoreServiceTests.swift */,
 				C56009222417DE6300044AAC /* NotificationHelperTests.swift */,
 				C560092B2418053A00044AAC /* ItemViewModelTests.swift */,
+				C5CCB85D24185290000AC916 /* DateHelperTests.swift */,
 				C57ACB162417071900673665 /* Info.plist */,
 			);
 			path = ChargeTests;
@@ -329,6 +335,7 @@
 				C5A25D9E2417485A00CF38C0 /* ItemModalView.swift in Sources */,
 				C56009252417DE9600044AAC /* NotificationHelper.swift in Sources */,
 				C560092A241804BF00044AAC /* ItemViewModel.swift in Sources */,
+				C5CCB85C2418302D000AC916 /* DateHelper.swift in Sources */,
 				C5A25D942417354200CF38C0 /* XibHelper.swift in Sources */,
 				C5A25D9624173C4B00CF38C0 /* DashboardTableViewCellView.swift in Sources */,
 				C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */,
@@ -347,6 +354,7 @@
 				C560092C2418053A00044AAC /* ItemViewModelTests.swift in Sources */,
 				C56009232417DE6300044AAC /* NotificationHelperTests.swift in Sources */,
 				C57ACB2824170C0100673665 /* CoreServiceTests.swift in Sources */,
+				C5CCB85E24185290000AC916 /* DateHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,4 +29,11 @@ class ItemViewModel {
         }
     }
     
+    var dateString: String {
+        get {
+            guard let date = self.item.date else { return "" }
+            return DateHelper.dateStringFrom(date: date)
+        }
+    }
+    
 }

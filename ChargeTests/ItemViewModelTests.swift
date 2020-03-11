@@ -46,5 +46,14 @@ class ItemViewModelTests: XCTestCase {
         XCTAssertEqual("This is a TEST description", itemViewModel.description)
     }
     
+    func testDateString(){
+        let expectedDateString = "03/10/2020"
+        let date = DateHelper.dateFrom(dateString: expectedDateString)
+        let data = [Item.Keys.date.rawValue : date!]  as [String : Any]
+        let item = CoreService.create(xCObjectType: .item, data: data) as! Item
+        let itemViewModel = ItemViewModel(item: item)
+        XCTAssertEqual("03/10/2020", itemViewModel.dateString)
+    }
+    
 
 }
