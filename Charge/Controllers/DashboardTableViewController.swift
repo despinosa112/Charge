@@ -98,6 +98,7 @@ extension DashboardTableViewController {
         cell.dashboardTableViewCellView?.itemDescriptionTextView.text = itemViewModel.description
         cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
         cell.dashboardTableViewCellView?.locationLabel.text = itemViewModel.locationString
+        cell.dashboardTableViewCellView?.barcodeImage.image = itemViewModel.barcode
         return cell
     }
 
@@ -109,7 +110,7 @@ extension DashboardTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 130
+        return 170
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -117,13 +118,4 @@ extension DashboardTableViewController {
         self.presentItemModalViewController(item: item)
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

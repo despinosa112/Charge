@@ -71,6 +71,7 @@ class ItemModalViewController: ViewController {
             data[keyString] = itemNum as Any
         } else {
             presentOKAlertWith(title: "Invalid Number", message: "Please use and integer for item number")
+            return
         }
         if let itemDescription = self.itemModalView?.itemDescriptionTextView.text {
             let keyString = Item.Keys.itemDescription.rawValue
@@ -81,6 +82,7 @@ class ItemModalViewController: ViewController {
              data[keyString] = date as Any
         } else {
             presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
+            return
         }
         if let location = LocationHelper.locationFrom(self.itemModalView?.locationTextField.text ?? "") {
             let locationString = LocationHelper.locationStringFrom(coordinate: location)
@@ -88,6 +90,7 @@ class ItemModalViewController: ViewController {
             data[keyString] = locationString as Any
         } else {
             presentOKAlertWith(title: "Invalid Location", message: "Please use latitude, longitude format")
+            return
         }
         guard let newItem = CoreService.create(xCObjectType: .item, data: data) else { return }
         CoreService.save(newItem)
@@ -100,17 +103,20 @@ class ItemModalViewController: ViewController {
             self.item?.itemNumber = itemNum
         } else {
             presentOKAlertWith(title: "Invalid Number", message: "Please use and integer for item number")
+            return
         }
         if let date = DateHelper.dateFrom(dateString: self.itemModalView?.dateTextField.text ?? "") {
             self.item?.date = date
         } else {
             presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
+            return
         }
         if let location = LocationHelper.locationFrom(self.itemModalView?.locationTextField.text ?? "") {
             let locationString = LocationHelper.locationStringFrom(coordinate: location)
             item?.location = locationString as NSObject
         } else {
             presentOKAlertWith(title: "Invalid Location", message: "Please use latitude, longitude format")
+            return
         }
 
         guard let managedObject = self.item else { return }

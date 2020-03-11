@@ -55,6 +55,12 @@ class ItemViewModelTests: XCTestCase {
         XCTAssertEqual("03/10/2020", itemViewModel.dateString)
     }
     
+    func testBarcode(){
+        let item = CoreService.create(xCObjectType: .item, data: nil) as! Item
+        let itemViewModel = ItemViewModel(item: item)
+        XCTAssert(itemViewModel.barcode is UIImage)
+    }
+    
     
 
 }

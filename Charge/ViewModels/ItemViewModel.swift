@@ -9,6 +9,7 @@
 import Foundation
 import CoreData
 import CoreLocation
+import UIKit
 
 class ItemViewModel {
     
@@ -41,6 +42,13 @@ class ItemViewModel {
         get {
             guard let coordString = self.item.location as? String else { return ""}
             return coordString
+        }
+    }
+    
+    var barcode: UIImage {
+        get {
+            let objectIdString = self.item.objectID.uriRepresentation().absoluteString
+            return BarcodeHelper.generateBarcode(from: objectIdString) ?? UIImage()
         }
     }
     

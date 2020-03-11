@@ -36,6 +36,8 @@
 		C5CCB85E24185290000AC916 /* DateHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB85D24185290000AC916 /* DateHelperTests.swift */; };
 		C5CCB86024186560000AC916 /* LocationHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB85F24186560000AC916 /* LocationHelperTests.swift */; };
 		C5CCB86224186583000AC916 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86124186583000AC916 /* LocationHelper.swift */; };
+		C5CCB86424188861000AC916 /* BarcodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86324188861000AC916 /* BarcodeHelper.swift */; };
+		C5CCB866241889D5000AC916 /* BarcodeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB865241889D5000AC916 /* BarcodeHelperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		C5CCB85D24185290000AC916 /* DateHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelperTests.swift; sourceTree = "<group>"; };
 		C5CCB85F24186560000AC916 /* LocationHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelperTests.swift; sourceTree = "<group>"; };
 		C5CCB86124186583000AC916 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		C5CCB86324188861000AC916 /* BarcodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeHelper.swift; sourceTree = "<group>"; };
+		C5CCB865241889D5000AC916 /* BarcodeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeHelperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				C56009242417DE9600044AAC /* NotificationHelper.swift */,
 				C5CCB85B2418302D000AC916 /* DateHelper.swift */,
 				C5CCB86124186583000AC916 /* LocationHelper.swift */,
+				C5CCB86324188861000AC916 /* BarcodeHelper.swift */,
 			);
 			path = "Shared Helpers";
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 				C560092B2418053A00044AAC /* ItemViewModelTests.swift */,
 				C5CCB85D24185290000AC916 /* DateHelperTests.swift */,
 				C5CCB85F24186560000AC916 /* LocationHelperTests.swift */,
+				C5CCB865241889D5000AC916 /* BarcodeHelperTests.swift */,
 				C57ACB162417071900673665 /* Info.plist */,
 			);
 			path = ChargeTests;
@@ -346,6 +352,7 @@
 				C5A25D942417354200CF38C0 /* XibHelper.swift in Sources */,
 				C5A25D9624173C4B00CF38C0 /* DashboardTableViewCellView.swift in Sources */,
 				C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */,
+				C5CCB86424188861000AC916 /* BarcodeHelper.swift in Sources */,
 				C5A25D9A241744C300CF38C0 /* ItemModalViewController.swift in Sources */,
 				C57ACAFD2417071700673665 /* SceneDelegate.swift in Sources */,
 				C5A25D8D24171F3B00CF38C0 /* DashboardTableViewController.swift in Sources */,
@@ -362,6 +369,7 @@
 				C560092C2418053A00044AAC /* ItemViewModelTests.swift in Sources */,
 				C56009232417DE6300044AAC /* NotificationHelperTests.swift in Sources */,
 				C57ACB2824170C0100673665 /* CoreServiceTests.swift in Sources */,
+				C5CCB866241889D5000AC916 /* BarcodeHelperTests.swift in Sources */,
 				C5CCB85E24185290000AC916 /* DateHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
