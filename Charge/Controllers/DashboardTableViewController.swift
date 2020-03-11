@@ -28,6 +28,11 @@ class DashboardTableViewController: UITableViewController {
         addObserver(.updateItem)
         LocationHelper.shared.requestAuthorization()
         self.setupSearchBar()
+        self.navigationController?.navigationBar.barTintColor = .red
+        self.navigationController?.navigationBar.tintColor = .white
+        let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = textAttributes
+        self.tableView.separatorStyle = .none;
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,12 +128,23 @@ extension DashboardTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 220
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = items[indexPath.item] as? Item else { return }
-        self.presentItemModalViewController(item: item)
+        if resultSearchController.isActive {
+            resultSearchController.dismiss(animated: false) {
+                let itemID = self.filteredItems[indexPath.item].objectID
+                for item in self.items {
+                    if item.objectID == itemID {
+                        self.presentItemModalViewController(item: item as? Item)
+                    }
+                }
+            }
+        } else {
+            guard let item = items[indexPath.item] as? Item else { return }
+            self.presentItemModalViewController(item: item)
+        }
     }
 
 }
@@ -155,6 +171,7 @@ extension DashboardTableViewController: UISearchResultsUpdating {
             let controller = UISearchController(searchResultsController: nil)
             controller.searchResultsUpdater = self
             controller.searchBar.sizeToFit()
+            controller.obscuresBackgroundDuringPresentation = false
             tableView.tableHeaderView = controller.searchBar
             return controller
         })()
