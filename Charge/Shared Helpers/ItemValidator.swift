@@ -19,13 +19,13 @@ class ItemValidator: NSObject {
     
 
     static func validate(itemModalView: ItemModalView) -> Int {
-        if Int(itemModalView.itemNumberTextField.text!) == nil {
+        if Int(itemModalView.itemNumberTextField.text!) == nil && itemModalView.itemNumberTextField.text! != ""{
             return isValidCode.invalidNumber.rawValue
         }
-        if DateHelper.dateFrom(dateString: itemModalView.dateTextField.text ?? "") == nil {
+        if DateHelper.dateFrom(dateString: itemModalView.dateTextField.text ?? "") == nil && itemModalView.dateTextField.text != ""{
             return isValidCode.invalidDate.rawValue
         }
-        if LocationHelper.locationFrom(itemModalView.locationTextField.text ?? "") == nil {
+        if LocationHelper.locationFrom(itemModalView.locationTextField.text ?? "") == nil && itemModalView.locationTextField.text != "" {
             return isValidCode.invalidLocation.rawValue
         }
         return isValidCode.success.rawValue
