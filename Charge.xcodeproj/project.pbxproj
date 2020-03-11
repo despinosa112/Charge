@@ -38,6 +38,11 @@
 		C5CCB86224186583000AC916 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86124186583000AC916 /* LocationHelper.swift */; };
 		C5CCB86424188861000AC916 /* BarcodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86324188861000AC916 /* BarcodeHelper.swift */; };
 		C5CCB866241889D5000AC916 /* BarcodeHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB865241889D5000AC916 /* BarcodeHelperTests.swift */; };
+		C5CCB868241894F8000AC916 /* DashboardTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB867241894F8000AC916 /* DashboardTableViewControllerTests.swift */; };
+		C5CCB86A2418A27C000AC916 /* ItemModalViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB8692418A27C000AC916 /* ItemModalViewControllerTests.swift */; };
+		C5CCB86C2418A520000AC916 /* XibHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86B2418A520000AC916 /* XibHelperTests.swift */; };
+		C5CCB86E2418A71D000AC916 /* ItemValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86D2418A71D000AC916 /* ItemValidator.swift */; };
+		C5CCB8702418ADBE000AC916 /* ItemValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCB86F2418ADBE000AC916 /* ItemValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,11 @@
 		C5CCB86124186583000AC916 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		C5CCB86324188861000AC916 /* BarcodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeHelper.swift; sourceTree = "<group>"; };
 		C5CCB865241889D5000AC916 /* BarcodeHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeHelperTests.swift; sourceTree = "<group>"; };
+		C5CCB867241894F8000AC916 /* DashboardTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewControllerTests.swift; sourceTree = "<group>"; };
+		C5CCB8692418A27C000AC916 /* ItemModalViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModalViewControllerTests.swift; sourceTree = "<group>"; };
+		C5CCB86B2418A520000AC916 /* XibHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibHelperTests.swift; sourceTree = "<group>"; };
+		C5CCB86D2418A71D000AC916 /* ItemValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemValidator.swift; sourceTree = "<group>"; };
+		C5CCB86F2418ADBE000AC916 /* ItemValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +131,7 @@
 				C5CCB85B2418302D000AC916 /* DateHelper.swift */,
 				C5CCB86124186583000AC916 /* LocationHelper.swift */,
 				C5CCB86324188861000AC916 /* BarcodeHelper.swift */,
+				C5CCB86D2418A71D000AC916 /* ItemValidator.swift */,
 			);
 			path = "Shared Helpers";
 			sourceTree = "<group>";
@@ -175,6 +186,10 @@
 				C5CCB85D24185290000AC916 /* DateHelperTests.swift */,
 				C5CCB85F24186560000AC916 /* LocationHelperTests.swift */,
 				C5CCB865241889D5000AC916 /* BarcodeHelperTests.swift */,
+				C5CCB867241894F8000AC916 /* DashboardTableViewControllerTests.swift */,
+				C5CCB8692418A27C000AC916 /* ItemModalViewControllerTests.swift */,
+				C5CCB86B2418A520000AC916 /* XibHelperTests.swift */,
+				C5CCB86F2418ADBE000AC916 /* ItemValidatorTests.swift */,
 				C57ACB162417071900673665 /* Info.plist */,
 			);
 			path = ChargeTests;
@@ -339,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C57ACB2324170A8F00673665 /* Item.swift in Sources */,
+				C5CCB86E2418A71D000AC916 /* ItemValidator.swift in Sources */,
 				C57ACAFF2417071700673665 /* ViewController.swift in Sources */,
 				C56009272417E4BF00044AAC /* Ext_UIViewController.swift in Sources */,
 				C5A25D912417302400CF38C0 /* DashboardTableViewCell.swift in Sources */,
@@ -364,13 +380,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5CCB86024186560000AC916 /* LocationHelperTests.swift in Sources */,
+				C5CCB86A2418A27C000AC916 /* ItemModalViewControllerTests.swift in Sources */,
+				C5CCB868241894F8000AC916 /* DashboardTableViewControllerTests.swift in Sources */,
 				C57ACB212417095200673665 /* ItemTests.swift in Sources */,
 				C57ACB152417071900673665 /* ChargeTests.swift in Sources */,
 				C560092C2418053A00044AAC /* ItemViewModelTests.swift in Sources */,
 				C56009232417DE6300044AAC /* NotificationHelperTests.swift in Sources */,
+				C5CCB8702418ADBE000AC916 /* ItemValidatorTests.swift in Sources */,
 				C57ACB2824170C0100673665 /* CoreServiceTests.swift in Sources */,
 				C5CCB866241889D5000AC916 /* BarcodeHelperTests.swift in Sources */,
 				C5CCB85E24185290000AC916 /* DateHelperTests.swift in Sources */,
+				C5CCB86C2418A520000AC916 /* XibHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

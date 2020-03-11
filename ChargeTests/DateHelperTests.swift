@@ -38,7 +38,7 @@ class DateHelperTests: XCTestCase {
     }
     
     func test_dateFromString_03_10_2020(){
-        let actualDate = DateHelper.dateFrom(dateString:"03/10/2020")
+        let actualDate = DateHelper.dateFrom(dateString:self.todaysDateString)
         XCTAssertEqual(self.todaysDate, actualDate!)
     }
     

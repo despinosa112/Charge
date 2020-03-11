@@ -22,15 +22,6 @@ class CoreServiceTests: XCTestCase {
         clearItemData()
     }
     
-    func clearItemData(){
-        CoreService.fetch(xCObjectType: .item, predicate: nil, sortDescriptors: nil) { (items) in
-            if items != nil {
-                for item in items! {
-                    CoreService.delete(xCObject: item)
-                }
-            }
-        }
-    }
 
     func test_create(){
         let emptyItem = CoreService.create(xCObjectType: .item, data: nil)
@@ -59,8 +50,31 @@ class CoreServiceTests: XCTestCase {
         }
     }
 
-    
-    
-    
+}
 
+
+extension XCTestCase {
+    
+    
+    func clearItemData(){
+        CoreService.fetch(xCObjectType: .item, predicate: nil, sortDescriptors: nil) { (items) in
+            if items != nil {
+                for item in items! {
+                    CoreService.delete(xCObject: item)
+                }
+            }
+        }
+    }
+    
+    func saveItemData(){
+        let data1 = [Item.Keys.itemDescription.rawValue : "Item Desc 1"] as [String : Any]
+        let item1 = CoreService.create(xCObjectType: .item, data: data1)
+        CoreService.save(item1!)
+        let data2 = [Item.Keys.itemDescription.rawValue : "Item Desc 2 TEST"] as [String : Any]
+        let item2 = CoreService.create(xCObjectType: .item, data: data2)
+        CoreService.save(item2!)
+    }
+    
+    
+    
 }

@@ -141,6 +141,9 @@ extension DashboardTableViewController: UISearchResultsUpdating {
         self.filteredItems = items.filter { (item) -> Bool in
             let searchText = searchController.searchBar.text!.lowercased()
             let description = item.itemDescription!.lowercased()
+            if searchText == "" {
+                return true
+            }
             return description.contains(searchText)
         }
         

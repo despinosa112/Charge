@@ -63,15 +63,11 @@ class ItemModalViewController: ViewController {
         }
     }
     
-    
     func createAndSaveNewItem(){
         var data = [String : Any]()
         if let itemNum = Int(self.itemModalView!.itemNumberTextField.text!) {
             let keyString = Item.Keys.itemNumber.rawValue
             data[keyString] = itemNum as Any
-        } else {
-            presentOKAlertWith(title: "Invalid Number", message: "Please use and integer for item number")
-            return
         }
         if let itemDescription = self.itemModalView?.itemDescriptionTextView.text {
             let keyString = Item.Keys.itemDescription.rawValue
@@ -80,17 +76,11 @@ class ItemModalViewController: ViewController {
         if let date = DateHelper.dateFrom(dateString: self.itemModalView?.dateTextField.text ?? "") {
             let keyString = Item.Keys.date.rawValue
              data[keyString] = date as Any
-        } else {
-            presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
-            return
         }
         if let location = LocationHelper.locationFrom(self.itemModalView?.locationTextField.text ?? "") {
             let locationString = LocationHelper.locationStringFrom(coordinate: location)
             let keyString = Item.Keys.location.rawValue
             data[keyString] = locationString as Any
-        } else {
-            presentOKAlertWith(title: "Invalid Location", message: "Please use latitude, longitude format")
-            return
         }
         guard let newItem = CoreService.create(xCObjectType: .item, data: data) else { return }
         CoreService.save(newItem)
@@ -101,34 +91,37 @@ class ItemModalViewController: ViewController {
         self.item?.itemDescription = self.itemModalView?.itemDescriptionTextView.text
         if let itemNum = Int64(self.itemModalView?.itemNumberTextField.text ?? "error") {
             self.item?.itemNumber = itemNum
-        } else {
-            presentOKAlertWith(title: "Invalid Number", message: "Please use and integer for item number")
-            return
         }
         if let date = DateHelper.dateFrom(dateString: self.itemModalView?.dateTextField.text ?? "") {
             self.item?.date = date
-        } else {
-            presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
-            return
         }
         if let location = LocationHelper.locationFrom(self.itemModalView?.locationTextField.text ?? "") {
             let locationString = LocationHelper.locationStringFrom(coordinate: location)
             item?.location = locationString as NSObject
-        } else {
-            presentOKAlertWith(title: "Invalid Location", message: "Please use latitude, longitude format")
-            return
         }
-
         guard let managedObject = self.item else { return }
         CoreService.save(managedObject)
         NotificationHelper.post(notification: .updateItem, data: nil)
+    }
+    
+    func handleErrorWithInvalidCode(_ invalidCode: Int) {
+        switch invalidCode {
+        case 1:
+            presentOKAlertWith(title: "Invalid Number", message: "Please use and integer for item number")
+        case 2:
+            presentOKAlertWith(title: "Invalid Date", message: "Please use MM/DD/YYYY format")
+        case 3:
+            presentOKAlertWith(title: "Invalid Location", message: "Please use latitude, longitude format")
+        default:
+            presentOKAlertWith(title: "Error", message: "Looks like there was an error validating your item")
+            return
+        }
     }
 
 }
 
 extension ItemModalViewController: ItemModalViewDelegate {
-    
-    
+        
     func didSelectCurrentLocation(itemModalView: ItemModalView) {
         let currentLocation = LocationHelper.shared.currentLocationString()
         self.itemModalView?.locationTextField.text = currentLocation
@@ -140,6 +133,11 @@ extension ItemModalViewController: ItemModalViewDelegate {
     }
     
     func didSaveUpdate(itemModalView: ItemModalView) {
+        let isValidCode = ItemValidator.validate(itemModalView: itemModalView)
+        if isValidCode != 0 {
+            handleErrorWithInvalidCode(isValidCode)
+            return
+        }
         if self.item != nil {
             //Update Item
             updateCurrentItem()
@@ -150,6 +148,5 @@ extension ItemModalViewController: ItemModalViewDelegate {
         self.dismiss(animated: true, completion: nil)
 
     }
-    
     
 }
