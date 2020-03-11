@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C55125EA24193B9800152C14 /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55125E924193B9800152C14 /* Component.swift */; };
+		C55125EC24193E0300152C14 /* ComponentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55125EB24193E0300152C14 /* ComponentTests.swift */; };
 		C56009232417DE6300044AAC /* NotificationHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56009222417DE6300044AAC /* NotificationHelperTests.swift */; };
 		C56009252417DE9600044AAC /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56009242417DE9600044AAC /* NotificationHelper.swift */; };
 		C56009272417E4BF00044AAC /* Ext_UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56009262417E4BF00044AAC /* Ext_UIViewController.swift */; };
@@ -57,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C55125E924193B9800152C14 /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		C55125EB24193E0300152C14 /* ComponentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentTests.swift; sourceTree = "<group>"; };
 		C56009222417DE6300044AAC /* NotificationHelperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelperTests.swift; sourceTree = "<group>"; };
 		C56009242417DE9600044AAC /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 		C56009262417E4BF00044AAC /* Ext_UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext_UIViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 			children = (
 				C57ACB142417071900673665 /* ChargeTests.swift */,
 				C57ACB202417095200673665 /* ItemTests.swift */,
+				C55125EB24193E0300152C14 /* ComponentTests.swift */,
 				C57ACB2724170C0100673665 /* CoreServiceTests.swift */,
 				C56009222417DE6300044AAC /* NotificationHelperTests.swift */,
 				C560092B2418053A00044AAC /* ItemViewModelTests.swift */,
@@ -201,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				C57ACB2224170A8F00673665 /* Item.swift */,
+				C55125E924193B9800152C14 /* Component.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C57ACB2324170A8F00673665 /* Item.swift in Sources */,
+				C55125EA24193B9800152C14 /* Component.swift in Sources */,
 				C5CCB86E2418A71D000AC916 /* ItemValidator.swift in Sources */,
 				C5CCB8722418C410000AC916 /* BarcodeDisplayViewController.swift in Sources */,
 				C57ACAFF2417071700673665 /* ViewController.swift in Sources */,
@@ -385,6 +392,7 @@
 			files = (
 				C5CCB86024186560000AC916 /* LocationHelperTests.swift in Sources */,
 				C5CCB86A2418A27C000AC916 /* ItemModalViewControllerTests.swift in Sources */,
+				C55125EC24193E0300152C14 /* ComponentTests.swift in Sources */,
 				C5CCB868241894F8000AC916 /* DashboardTableViewControllerTests.swift in Sources */,
 				C57ACB212417095200673665 /* ItemTests.swift in Sources */,
 				C57ACB152417071900673665 /* ChargeTests.swift in Sources */,

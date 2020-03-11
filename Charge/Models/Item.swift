@@ -15,6 +15,7 @@ extension Item {
         case itemNumber = "itemNumber"
         case date = "date"
         case location = "location"
+        case components = "components"
     }
     
 

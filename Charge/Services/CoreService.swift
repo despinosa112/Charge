@@ -13,6 +13,7 @@ class CoreService: NSObject {
     
     enum XCObjectType: String {
         case item = "Item"
+        case component = "Component"
     }
 
     

@@ -69,6 +69,12 @@ class DashboardTableViewControllerTests: XCTestCase {
         XCTAssertEqual(2, numberOfRows)
     }
     
+    func test_itemsHaveDifferentObjectIds(){
+        let item0id = self.dashboardTableViewController.items[0].objectID.uriRepresentation().absoluteString
+        let item1id = self.dashboardTableViewController.items[1].objectID.uriRepresentation().absoluteString
+        XCTAssertNotEqual(item0id, item1id)
+    }
+    
     
 
 }
