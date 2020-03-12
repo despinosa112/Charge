@@ -15,12 +15,15 @@ class ItemModalViewController: ViewController {
 
     var item: Item?
     
+    var itemComponents: [Component]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         layoutModal()
         self.modalOverlay.isHidden = false
         self.view.backgroundColor = .clear
+        self.addObserver(.componentsFinished)
         setData()
     }
 
@@ -51,6 +54,7 @@ class ItemModalViewController: ViewController {
     }
     
     func setData(){
+        
         if item == nil {
             self.itemModalView?.itemNumberTextField.text = "0"
             self.itemModalView?.dateTextField.text = DateHelper.today()
@@ -124,10 +128,7 @@ extension ItemModalViewController: ItemModalViewDelegate {
     
     func didSelectManageComponents(itemModalView: ItemModalView) {
         let componentsViewController = ComponentsTableViewController()
-        
-        if let components = self.item?.components as? [Component] {
-            componentsViewController.components = components
-        }
+        componentsViewController.delegate = self
         let navController = UINavigationController(rootViewController: componentsViewController)
         navController.modalTransitionStyle = .crossDissolve
         navController.modalPresentationStyle = .overCurrentContext
@@ -161,5 +162,16 @@ extension ItemModalViewController: ItemModalViewDelegate {
         self.dismiss(animated: true, completion: nil)
 
     }
+    
+}
+
+extension ItemModalViewController: ComponentsTableViewControllerDelegate {
+    
+    func didFinish(componentsTableViewController: ComponentsTableViewController) {
+        let components = componentsTableViewController.components
+        self.itemComponents = components
+        
+    }
+    
     
 }

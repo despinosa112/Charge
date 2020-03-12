@@ -73,8 +73,9 @@ class DashboardTableViewController: UITableViewController {
             refresh()
         case .updateItem:
             refresh()
-        case .none:
-            print("none")
+        default:
+            print("Do Nothing")
+        
         }
     }
     
@@ -116,7 +117,7 @@ extension DashboardTableViewController {
         cell.dashboardTableViewCellView?.itemDescriptionTextView.text = itemViewModel.description
         cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
         cell.dashboardTableViewCellView?.locationLabel.text = itemViewModel.locationString
-        cell.dashboardTableViewCellView?.componentCountLabel.text = itemViewModel.componentCountString
+//        cell.dashboardTableViewCellView?.componentCountLabel.text = itemViewModel.componentCountString
         cell.dashboardTableViewCellView?.indexPath = indexPath
         cell.dashboardTableViewCellView?.delegate = self
         return cell

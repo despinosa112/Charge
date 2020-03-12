@@ -13,6 +13,7 @@ class NotificationHelper: NSObject {
     enum Notification: String {
         case saveNewItem = "SaveNewItem"
         case updateItem = "UpdateItem"
+        case componentsFinished = "componentsFinished"
     }
     
     static func post(notification: Notification, data: [String: Any]?){

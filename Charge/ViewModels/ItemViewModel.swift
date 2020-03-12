@@ -45,12 +45,13 @@ class ItemViewModel {
         }
     }
     
-    var componentCountString: String {
-        get {
-            guard let components = self.item.components as? [Component] else { return "0" }
-            return String(components.count)
-        }
-    }
+//    var componentCountString: String {
+//        get {
+//            
+//            guard let components = self.item.components as? [Component] else { return "0" }
+//            return String(components.count)
+//        }
+//    }
     
     var barcode: UIImage {
         get {

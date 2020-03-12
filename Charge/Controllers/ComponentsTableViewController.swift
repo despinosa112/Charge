@@ -9,9 +9,18 @@
 import UIKit
 import CoreData
 
+protocol ComponentsTableViewControllerDelegate {
+    
+    func didFinish(componentsTableViewController: ComponentsTableViewController)
+    
+}
+
 class ComponentsTableViewController: UITableViewController {
     
     var components = [Component]()
+    var item: Item?
+    
+    var delegate: ComponentsTableViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +39,7 @@ class ComponentsTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = .white
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        let closeButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(dismissSelf))
+        let closeButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(dismissSelf))
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addComponent))
         self.navigationItem.setRightBarButtonItems([closeButton, addButton], animated: true)
 
@@ -60,6 +69,13 @@ class ComponentsTableViewController: UITableViewController {
         self.components.append(component)
         self.tableView.reloadData()
     }
+    
+    
+    override func dismissSelf() {
+        delegate?.didFinish(componentsTableViewController: self)
+        self.dismiss(animated: true, completion: nil)
+    }
+
     
 }
 
@@ -102,6 +118,7 @@ extension ComponentsTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let newComponentTableViewController = ComponentsTableViewController()
+        let component = self.components[indexPath.item]
         self.navigationController?.pushViewController(newComponentTableViewController, animated: true)
 
     }

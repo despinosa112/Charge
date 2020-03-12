@@ -17,6 +17,7 @@
 		C560092C2418053A00044AAC /* ItemViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C560092B2418053A00044AAC /* ItemViewModelTests.swift */; };
 		C56128592419BF62006EC086 /* ComponentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56128582419BF62006EC086 /* ComponentViewModel.swift */; };
 		C561285B2419BFA7006EC086 /* ComponentViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C561285A2419BFA7006EC086 /* ComponentViewModelTests.swift */; };
+		C561285D2419C746006EC086 /* ComponentsTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C561285C2419C746006EC086 /* ComponentsTableViewControllerTests.swift */; };
 		C57ACAFB2417071700673665 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACAFA2417071700673665 /* AppDelegate.swift */; };
 		C57ACAFD2417071700673665 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACAFC2417071700673665 /* SceneDelegate.swift */; };
 		C57ACAFF2417071700673665 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57ACAFE2417071700673665 /* ViewController.swift */; };
@@ -72,6 +73,7 @@
 		C560092B2418053A00044AAC /* ItemViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModelTests.swift; sourceTree = "<group>"; };
 		C56128582419BF62006EC086 /* ComponentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewModel.swift; sourceTree = "<group>"; };
 		C561285A2419BFA7006EC086 /* ComponentViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewModelTests.swift; sourceTree = "<group>"; };
+		C561285C2419C746006EC086 /* ComponentsTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentsTableViewControllerTests.swift; sourceTree = "<group>"; };
 		C57ACAF72417071700673665 /* Charge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Charge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C57ACAFA2417071700673665 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C57ACAFC2417071700673665 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				C5CCB8692418A27C000AC916 /* ItemModalViewControllerTests.swift */,
 				C5CCB86B2418A520000AC916 /* XibHelperTests.swift */,
 				C5CCB86F2418ADBE000AC916 /* ItemValidatorTests.swift */,
+				C561285C2419C746006EC086 /* ComponentsTableViewControllerTests.swift */,
 				C57ACB162417071900673665 /* Info.plist */,
 			);
 			path = ChargeTests;
@@ -408,6 +411,7 @@
 				C5CCB868241894F8000AC916 /* DashboardTableViewControllerTests.swift in Sources */,
 				C57ACB212417095200673665 /* ItemTests.swift in Sources */,
 				C57ACB152417071900673665 /* ChargeTests.swift in Sources */,
+				C561285D2419C746006EC086 /* ComponentsTableViewControllerTests.swift in Sources */,
 				C560092C2418053A00044AAC /* ItemViewModelTests.swift in Sources */,
 				C56009232417DE6300044AAC /* NotificationHelperTests.swift in Sources */,
 				C5CCB8702418ADBE000AC916 /* ItemValidatorTests.swift in Sources */,
