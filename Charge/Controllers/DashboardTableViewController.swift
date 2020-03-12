@@ -116,7 +116,7 @@ extension DashboardTableViewController {
         cell.dashboardTableViewCellView?.itemDescriptionTextView.text = itemViewModel.description
         cell.dashboardTableViewCellView?.itemNumberLabel.text = itemViewModel.itemNum
         cell.dashboardTableViewCellView?.locationLabel.text = itemViewModel.locationString
-        cell.dashboardTableViewCellView?.barcodeImage.image = itemViewModel.barcode
+        cell.dashboardTableViewCellView?.componentCountLabel.text = itemViewModel.componentCountString
         cell.dashboardTableViewCellView?.indexPath = indexPath
         cell.dashboardTableViewCellView?.delegate = self
         return cell
@@ -185,7 +185,9 @@ extension DashboardTableViewController: DashboardTableViewCellViewDelegate {
     func didSelectPressShowBarcode(dashboardTableViewCellView: DashboardTableViewCellView, indexPath: IndexPath) {
         let barcodeDisplayViewController = BarcodeDisplayViewController()
         barcodeDisplayViewController.set(item: self.items[indexPath.item] as! Item)
-        self.navigationController?.pushViewController(barcodeDisplayViewController, animated: true)
+        let navController = UINavigationController(rootViewController: barcodeDisplayViewController)
+        self.present(navController, animated: true, completion: nil)
+
     }
 
 }

@@ -25,6 +25,8 @@ class BarcodeDisplayViewController: ViewController {
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .black
         self.title = "Item Barcode"
+        let rightBarButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(dismissSelf))
+        self.navigationItem.setRightBarButton(rightBarButton, animated: true)
         layoutBarcodeImageView()
     }
     

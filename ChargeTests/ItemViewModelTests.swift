@@ -61,6 +61,23 @@ class ItemViewModelTests: XCTestCase {
         XCTAssert(itemViewModel.barcode is UIImage)
     }
     
+    func testComponentCount_0(){
+        let item = CoreService.create(xCObjectType: .item, data: nil) as! Item
+        let itemViewModel = ItemViewModel(item: item)
+        let componentCountString = itemViewModel.componentCountString
+        XCTAssertEqual(componentCountString, "0")
+    }
+    
+    func testComponentCount_1(){
+        let componentData = [Component.Keys.name.rawValue : "Component1"] as [String : Any]
+        let component = CoreService.create(xCObjectType: .component, data: componentData )
+        let itemData = [Item.Keys.components.rawValue: [component]]
+        let item = CoreService.create(xCObjectType: .item, data: itemData) as! Item
+        let itemViewModel = ItemViewModel(item: item)
+        let componentCountString = itemViewModel.componentCountString
+        XCTAssertEqual(componentCountString, "1")
+    }
+    
     
 
 }

@@ -18,8 +18,9 @@ class DashboardTableViewCellView: UIView {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var itemDescriptionTextView: UITextView!
-    @IBOutlet weak var barcodeImage: UIImageView!
 
+    @IBOutlet weak var componentCountLabel: UILabel!
+    
     var indexPath: IndexPath!
     var delegate: DashboardTableViewCellViewDelegate?
 

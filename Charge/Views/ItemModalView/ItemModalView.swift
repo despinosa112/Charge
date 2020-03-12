@@ -12,6 +12,7 @@ protocol ItemModalViewDelegate {
     func didClose(itemModalView: ItemModalView)
     func didSaveUpdate(itemModalView: ItemModalView)
     func didSelectCurrentLocation(itemModalView: ItemModalView)
+    func didSelectManageComponents(itemModalView: ItemModalView)
 }
 
 class ItemModalView: UIView {
@@ -28,6 +29,7 @@ class ItemModalView: UIView {
     
     @IBOutlet weak var itemDescriptionTextView: UITextView!
     
+    @IBOutlet weak var componentsLabel: UILabel!
     
     
     var delegate: ItemModalViewDelegate?
@@ -44,5 +46,8 @@ class ItemModalView: UIView {
         self.delegate?.didSelectCurrentLocation(itemModalView: self)
     }
     
+    @IBAction func manageComponents(_ sender: Any) {
+        self.delegate?.didSelectManageComponents(itemModalView: self)
+    }
     
 }

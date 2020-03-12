@@ -121,6 +121,19 @@ class ItemModalViewController: ViewController {
 }
 
 extension ItemModalViewController: ItemModalViewDelegate {
+    
+    func didSelectManageComponents(itemModalView: ItemModalView) {
+        let componentsViewController = ComponentsTableViewController()
+        
+        if let components = self.item?.components as? [Component] {
+            componentsViewController.components = components
+        }
+        let navController = UINavigationController(rootViewController: componentsViewController)
+        navController.modalTransitionStyle = .crossDissolve
+        navController.modalPresentationStyle = .overCurrentContext
+        self.present(navController, animated: true, completion: nil)
+    }
+    
         
     func didSelectCurrentLocation(itemModalView: ItemModalView) {
         let currentLocation = LocationHelper.shared.currentLocationString()

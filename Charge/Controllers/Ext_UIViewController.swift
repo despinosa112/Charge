@@ -28,4 +28,8 @@ extension UIViewController {
     }
     
     
+    @objc func dismissSelf(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
